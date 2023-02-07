@@ -1,4 +1,4 @@
 package team22.pages.sevim_hn;
 
-public class Sevim {
+public class HomePage_svm {
 }
