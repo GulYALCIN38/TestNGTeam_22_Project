@@ -16,7 +16,7 @@ import java.util.function.Function;
 import static org.testng.AssertJUnit.assertFalse;
 import static org.testng.AssertJUnit.assertTrue;
 public class ReusableMethods {
-    public static String getScreenshot(String name) throws IOException {
+    public static String getScreenshot(String name) {
         // naming the screenshot with the current date to avoid duplication
         String date = new SimpleDateFormat("yyyyMMddhhmmss").format(new Date());
         // TakesScreenshot is an interface of selenium that takes the screenshot
@@ -26,9 +26,14 @@ public class ReusableMethods {
         String target = System.getProperty("user.dir") + "/test-output/Screenshots/" + date + ".png";
         File finalDestination = new File(target);
         // save the screenshot to the path given
-        FileUtils.copyFile(source, finalDestination);
+        try {
+            FileUtils.copyFile(source, finalDestination);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
         return target;
     }
+
     //========Switching Window=====//
     public static void switchToWindow(String targetTitle) {
         String origin = Driver.getDriver().getWindowHandle();
