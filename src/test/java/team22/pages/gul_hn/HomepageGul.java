@@ -29,10 +29,17 @@ public class HomepageGul {
     @FindBy(xpath = "//input[@id='billing_first_name']")
     public WebElement firstName;
 
+    @FindBy(xpath = "//input[@id='billing_last_name']")
+    public WebElement lastName;
+    @FindBy(xpath = "//*[@id='billing_country']")
+    public WebElement country;
     @FindBy(xpath = "//input[@id='billing_address_1']")
     public WebElement streetAdresse;
-
+    @FindBy(id = "billing_email")
+    public WebElement email;
     @FindBy(xpath = "//*[@name='save_address']")
     public WebElement saveAdresse;
 
+    @FindBy(xpath = "//ul[@class='woocommerce-error']//li[@class=' alert alert-simple alert-icon alert-close-top alert-danger']")
+    public WebElement ereurMessage;
 }
