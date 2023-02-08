@@ -42,6 +42,11 @@ public class HomePage_svm {
     @FindBy(xpath = "(//li[@class='woocommerce-mini-cart-item mini-item mini_cart_item'])[2]")
     public WebElement cartProduct2;
 
+    @FindBy(xpath = "//*[text()='Checkout']")
+    public WebElement checkoutButton;
+
+    @FindBy(xpath = "//h3[@id='order_review_heading']")
+    public WebElement productReview;
 
 
 
