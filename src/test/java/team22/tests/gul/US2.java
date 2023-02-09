@@ -1,8 +1,6 @@
 package team22.tests.gul;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import team22.pages.HomePage;
 import team22.pages.gul_hn.HomepageGul;

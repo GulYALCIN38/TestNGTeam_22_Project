@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import team22.pages.HomePage;
 import team22.pages.gul_hn.HomepageGul;
 import team22.utilities.ReusableMethods;
 
@@ -28,7 +27,6 @@ public class TC_04 {
     //Kullanici email adrsinin otomatik geldigini gorur
     //Kullanici SAVE ADDRESS alanina tiklar .
     //Kullanici "Street address  is a required field." mesajini gorur.
-    HomePage homePage=new HomePage();
     HomepageGul homepageGul=new HomepageGul();
     @Test
     public void testAdres_NegativeTest() {

@@ -30,7 +30,6 @@ public class TC_06 {
     //Kullanici SAVE ADDRESS alanina tiklar .
     //Kullanici " Town / City is a required field." mesajini gorur.
 
-    HomePage homePage=new HomePage();
     HomepageGul homepageGul=new HomepageGul();
     @Test
     public void testCity_negative() {

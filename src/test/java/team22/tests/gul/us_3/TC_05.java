@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import team22.pages.HomePage;
 import team22.pages.gul_hn.HomepageGul;
 import team22.utilities.ReusableMethods;
 
@@ -29,7 +28,6 @@ public class TC_05 {
     //Kullanici SAVE ADDRESS alanina tiklar .
     //Kullanici " Postcode / ZIP is a required field." mesajini gorur.
 
-    HomePage homePage=new HomePage();
     HomepageGul homepageGul=new HomepageGul();
 
     @Test
