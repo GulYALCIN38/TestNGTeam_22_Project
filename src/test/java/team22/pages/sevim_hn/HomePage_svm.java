@@ -45,8 +45,15 @@ public class HomePage_svm {
     @FindBy(xpath = "//*[text()='Checkout']")
     public WebElement checkoutButton;
 
-    @FindBy(xpath = "//h3[@id='order_review_heading']")
-    public WebElement productReview;
+
+
+    @FindBy(xpath = "//li[@id='menu-item-1074']")
+    public WebElement MyAccountButton;
+
+
+
+
+
 
 
 
