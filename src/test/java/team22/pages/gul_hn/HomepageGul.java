@@ -60,6 +60,10 @@ public class HomepageGul {
 
     @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']//div[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']")
     public WebElement succesfulllymessage;
+
+    @FindBy(xpath = "//*[@id='email']")
+    public WebElement fakemail;
+
     public void ilkAdimlar(){
 
         homePage.login(ConfigReader.getProperty("username"),ConfigReader.getProperty("password"));

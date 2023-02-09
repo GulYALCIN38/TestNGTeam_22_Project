@@ -6,35 +6,53 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import team22.pages.HomePage;
 import team22.pages.gul_hn.HomepageGul;
+import team22.utilities.ConfigReader;
+import team22.utilities.Driver;
 import team22.utilities.ReusableMethods;
 
-public class TC_09 {
-
-    //Kullanıcı anasayfayı açar
-    //Kullanıcı uygulamaya login olur
-    //Kullanici, My Account butonuna tiklar
-    //Kullanici Addresse bolumune tiklar.
-    //Kullanici 'Biling Adress' bolumunu gorur
-    //Kullanici, add butonuna tiklar
-    //Kullanici First name alanina valid bir deger girer
-    //Kullanici Lastname alanina valid bir deger girer
-    //Kullanici Country /Region alanina tiklar.
-    //Kullanici Country alaninda cikan dropdowndan ulke secer.
-    //Kullanici Street Adress alanina valid bir deger girer.
-    //Kullanici Town / City alanina valid bir deger girer.
-    //Kullanici ZIP code alanina valid bir deger girer.
-    //Kullanici Phone bolumune  valid bir numara girer
-    //Kullanici email adrsini gorur
-    //Kullanici SAVE ADDRESS alanina tiklar .
-    //Kullanici address changed succefully mesajini gorur.
+public class TC_10_positive_dynamique {
     HomepageGul homepageGul=new HomepageGul();
+    HomePage homePage=new HomePage();
 
     @Test
-    public void testBilingAdress_Positive() {
-        homepageGul.ilkAdimlar();
-
+    public void test_positive() {
         Faker faker=new Faker();
+        String username=faker.name().fullName();
+        Driver.getDriver().get(ConfigReader.getProperty("fakemail"));
+        ReusableMethods.waitFor(2);
+        String mail=homepageGul.fakemail.getText();
+
+        Driver.getDriver().get(ConfigReader.getProperty("app-url"));
+        //Kullanici register butonuna tiklar
+        homePage.registerButonu.click();
+
+        //Kullanici Username bolumune  bir username girer
+        //Kullanici Your Email address bolumune  bir email girer
+        //Kullanici Password  bolumune bir username girer
+        //Kullanici "I agree to the privacy policy" checkout unu secer
+        //Kullanici  "sign up" butonuna tiklar
+        homePage.registerUsername.sendKeys(username, Keys.TAB,mail,Keys.TAB,"Endemik38*",Keys.ENTER,Keys.SPACE,Keys.ENTER);
+        ReusableMethods.waitFor(2);
+
+        //Kullanici, My Account butonuna tiklar
+        homepageGul.myAccount.click();
+        ReusableMethods.waitFor(3);
+
+
+        //Kullanici Addresse bolumune tiklar.
+        ReusableMethods.clickByJS( homepageGul.adresse);
+
+      /*  JavascriptExecutor js=(JavascriptExecutor) Driver.getDriver();
+        js.executeScript("arguments[0].click();",homepageGul.adresse);*/
+
+        //Kullanici 'Biling Adress' bolumunu gorur
+        assert  homepageGul.bilingAdresse.isDisplayed();
+
+        //Kullanici, add butonuna tiklar
+        ReusableMethods.clickByJS( homepageGul.add);
+
         String firstname=faker.name().firstName();
         String lastname=faker.name().lastName();
         String adresse=faker.address().streetAddress();
@@ -75,6 +93,13 @@ public class TC_09 {
         ReusableMethods.getScreenshot("positifregistre");
         ReusableMethods.waitFor(2);
         Assert.assertEquals(homepageGul.succesfulllymessage.getText(),"Address changed successfully.");
+
+
+
+
+
+
+
 
 
     }

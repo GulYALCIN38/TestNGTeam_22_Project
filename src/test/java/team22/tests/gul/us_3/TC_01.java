@@ -1,18 +1,11 @@
 package team22.tests.gul.us_3;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import team22.pages.HomePage;
 import team22.pages.gul_hn.HomepageGul;
-import team22.utilities.ConfigReader;
-import team22.utilities.Driver;
 import team22.utilities.ReusableMethods;
 
 import java.time.Duration;
