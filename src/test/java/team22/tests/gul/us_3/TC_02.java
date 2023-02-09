@@ -3,11 +3,13 @@ package team22.tests.gul.us_3;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team22.pages.HomePage;
 import team22.pages.gul_hn.HomepageGul;
+import team22.utilities.Driver;
 import team22.utilities.ReusableMethods;
 
 import java.io.IOException;
@@ -31,32 +33,11 @@ public class TC_02 {
     //Kullanici email adrsinin otomatik geldigini gorur
     //Kullanici SAVE ADDRESS alanina tiklar .
     //Kullanici " First name is a required field." mesajini gorur.
-    HomePage homePage=new HomePage();
     HomepageGul homepageGul=new HomepageGul();
 
     @Test
     public void testfirstname_negatif() {
-        //Kullanıcı anasayfayı açar
-        //Kullanıcı uygulamaya login olur
-        homePage.login("zeliha yalcin","Endemik38*");
-        ReusableMethods.waitFor(3);
-
-        //Kullanici, My Account butonuna tiklar
-        homepageGul.myAccount.click();
-        ReusableMethods.waitFor(3);
-
-
-        //Kullanici Addresse bolumune tiklar.
-        ReusableMethods.clickByJS(homepageGul.adresse);
-
-      /*  JavascriptExecutor js=(JavascriptExecutor) Driver.getDriver();
-        js.executeScript("arguments[0].click();",homepageGul.adresse);*/
-
-        //Kullanici 'Biling Adress' bolumunu gorur
-        assert homepageGul.bilingAdresse.isDisplayed();
-
-        //Kullanici, add butonuna tiklar
-        ReusableMethods.clickByJS(homepageGul.add);
+        homepageGul.ilkAdimlar();
 
         Faker faker=new Faker();
         String lastname=faker.name().lastName();
@@ -81,10 +62,16 @@ public class TC_02 {
 
 
         //Kullanici Street Adress alanina valid bir deger girer.
+        homepageGul.streetAdresse.sendKeys(adresse);
+
         //Kullanici Town / City alanina valid bir deger girer.
+        homepageGul.city.sendKeys(city);
+
         //Kullanici ZIP code alanina valid bir deger girer.
+        homepageGul.zip.sendKeys(zip);
+
         //Kullanici Phone bolumune  valid bir numara girer
-        homepageGul.streetAdresse.sendKeys(adresse,Keys.TAB,Keys.ARROW_DOWN,"66450",Keys.TAB,"Perpignan",Keys.TAB,"658194363");
+        homepageGul.phone.sendKeys(phone);
 
         //Kullanici email adrsinin otomatik geldigini gorur
         ReusableMethods.verifyElementDisplayed(homepageGul.email);

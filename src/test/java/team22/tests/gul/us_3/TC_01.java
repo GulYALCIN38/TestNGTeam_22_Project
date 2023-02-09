@@ -34,31 +34,10 @@ public class TC_01 {
     //Kullanici email adrsinin otomatik geldigini gorur
     //Kullanici SAVE ADDRESS alanina tiklar .
     //Kullanici " Country / Region is a required field." mesajini gorur.
-    HomePage homePage=new HomePage();
     HomepageGul homepageGul=new HomepageGul();
     @Test
     public void testCountryRegion_negatif() {
-        //Kullanıcı anasayfayı açar
-        //Kullanıcı uygulamaya login olur
-        homePage.login("zeliha yalcin","Endemik38*");
-        ReusableMethods.waitFor(3);
-
-        //Kullanici, My Account butonuna tiklar
-        homepageGul.myAccount.click();
-        ReusableMethods.waitFor(3);
-
-
-        //Kullanici Addresse bolumune tiklar.
-        ReusableMethods.clickByJS(homepageGul.adresse);
-
-      /*  JavascriptExecutor js=(JavascriptExecutor) Driver.getDriver();
-        js.executeScript("arguments[0].click();",homepageGul.adresse);*/
-
-        //Kullanici 'Biling Adress' bolumunu gorur
-        assert homepageGul.bilingAdresse.isDisplayed();
-
-        //Kullanici, add butonuna tiklar
-        ReusableMethods.clickByJS(homepageGul.add);
+        homepageGul.ilkAdimlar();
 
 
         Faker faker=new Faker();

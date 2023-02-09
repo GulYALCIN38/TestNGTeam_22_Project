@@ -6,11 +6,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-import team22.pages.HomePage;
 import team22.pages.gul_hn.HomepageGul;
 import team22.utilities.ReusableMethods;
 
-public class TC_03 {
+public class TC_09 {
+
     //Kullanıcı anasayfayı açar
     //Kullanıcı uygulamaya login olur
     //Kullanici, My Account butonuna tiklar
@@ -18,22 +18,21 @@ public class TC_03 {
     //Kullanici 'Biling Adress' bolumunu gorur
     //Kullanici, add butonuna tiklar
     //Kullanici First name alanina valid bir deger girer
-    //Kullanici Lastname alanini bos birakir
+    //Kullanici Lastname alanina valid bir deger girer
     //Kullanici Country /Region alanina tiklar.
     //Kullanici Country alaninda cikan dropdowndan ulke secer.
     //Kullanici Street Adress alanina valid bir deger girer.
     //Kullanici Town / City alanina valid bir deger girer.
     //Kullanici ZIP code alanina valid bir deger girer.
     //Kullanici Phone bolumune  valid bir numara girer
-    //Kullanici email adrsinin otomatik geldigini gorur
+    //Kullanici email adrsini gorur
     //Kullanici SAVE ADDRESS alanina tiklar .
-    //Kullanici " Last name is a required field." mesajini gorur.
+    //Kullanici address changed succefully mesajini gorur.
     HomepageGul homepageGul=new HomepageGul();
 
     @Test
-    public void testlastName_negative() {
+    public void testBilingAdress_Positive() {
         homepageGul.ilkAdimlar();
-
 
         Faker faker=new Faker();
         String firstname=faker.name().firstName();
@@ -42,18 +41,18 @@ public class TC_03 {
         String city=faker.address().city();
         String zip=faker.address().zipCode();
         String phone=faker.phoneNumber().cellPhone();
+        ReusableMethods.waitFor(2);
 
         //Kullanici First name alanina valid bir deger girer
-        homepageGul.firstName.sendKeys(firstname);
+        //Kullanici Lastname alanina valid bir deger girer
+        homepageGul.firstName.sendKeys(firstname, Keys.TAB,lastname);
 
-        //Kullanici Lastname alanini bos birakir
-
-        //Kullanici Country /Region alanina tiklar.
         //Kullanici Country alaninda cikan dropdowndan ulke secer.
         WebElement w= homepageGul.country;
         Select select=new Select(w);
         select.selectByVisibleText("France");
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(1);
+
         //Kullanici Street Adress alanina valid bir deger girer.
         homepageGul.streetAdresse.sendKeys(adresse);
 
@@ -61,7 +60,7 @@ public class TC_03 {
         homepageGul.city.sendKeys(city);
 
         //Kullanici ZIP code alanina valid bir deger girer.
-        homepageGul.zip.sendKeys(zip);
+        homepageGul.zip.sendKeys("66450");
 
         //Kullanici Phone bolumune  valid bir numara girer
         homepageGul.phone.sendKeys(phone);
@@ -72,11 +71,10 @@ public class TC_03 {
         //Kullanici SAVE ADDRESS alanina tiklar .
         ReusableMethods.clickByJS(homepageGul.saveAdresse);
 
-        //Kullanici " Last name is a required field." mesajini gorur.
-        ReusableMethods.getScreenshot("NegativeLaststname");
+        //Kullanici address changed succefully mesajini gorur.
+        ReusableMethods.getScreenshot("positifregistre");
         ReusableMethods.waitFor(2);
-        Assert.assertEquals(homepageGul.ereurMessage.getText(),"Last name is a required field.");
-
+        Assert.assertEquals(homepageGul.ereurMessage.getText(),"Address changed successfully.");
 
 
     }
