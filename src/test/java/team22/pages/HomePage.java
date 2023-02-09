@@ -81,6 +81,21 @@ public class HomePage {
         ReusableMethods.waitFor(5);
 
     }
+    public static void loginKullanici() {
+        AllureHomePage allureHomePage = new AllureHomePage();
+        AllureMyAccount allureMyAccount = new AllureMyAccount();
+        AllureStorePage allureStorePage = new AllureStorePage();
+
+        Driver.getDriver().get(ConfigReader.getProperty("app-url"));
+        allureHomePage.signIn.click();
+        ReusableMethods.waitFor(5);
+        allureHomePage.mailKutusu.sendKeys(ConfigReader.getProperty("kul-email"));
+        ReusableMethods.waitFor(2);
+        allureHomePage.passwordKutusu.sendKeys(ConfigReader.getProperty("kul-pass"));
+        ReusableMethods.waitFor(5);
+        allureHomePage.signInButton.click();
+
+    }
 
 
 
