@@ -42,7 +42,6 @@ public class HomePage {
         ReusableMethods.waitFor(2);
         username.sendKeys(user_name, Keys.TAB, password, Keys.TAB, Keys.TAB, Keys.TAB, Keys.ENTER);
 
-
     }
 
     public static void LoginVendor() {
@@ -52,11 +51,11 @@ public class HomePage {
 
         Driver.getDriver().get(ConfigReader.getProperty("app-url"));
         allureHomePage.signIn.click();
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(2);
         allureHomePage.mailKutusu.sendKeys(ConfigReader.getProperty("vendor-email"));
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(2);
         allureHomePage.passwordKutusu.sendKeys(ConfigReader.getProperty("vendor-pass"));
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(2);
         allureHomePage.signInButton.click();
 
     }
