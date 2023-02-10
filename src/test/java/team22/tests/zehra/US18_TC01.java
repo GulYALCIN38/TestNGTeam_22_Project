@@ -25,7 +25,8 @@ public class US18_TC01 {
         allureStorePage.simpleProduct.click();
         Select simpleDropdown = new Select(allureStorePage.simpleProduct);
         simpleDropdown.selectByVisibleText("External/Affiliate Product");
-        actions.moveToElement(allureAddProduct.kucukFoto).perform();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
+       // actions.moveToElement(allureAddProduct.kucukFoto).perform();
         Assert.assertTrue(allureAddProduct.url.isDisplayed());
         Driver.closeDriver();
 
