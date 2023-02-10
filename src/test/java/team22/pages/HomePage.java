@@ -65,20 +65,16 @@ public class HomePage {
         AllureMyAccount allureMyAccount = new AllureMyAccount();
         AllureStorePage allureStorePage = new AllureStorePage();
 
-        JavascriptExecutor jse = (JavascriptExecutor) Driver.getDriver();
-        jse.executeScript("window.scrollTo(0,document.body.scrollHeight)");
-        jse.executeScript("arguments[0].click();",allureHomePage.myAccount);
-        // allureHomePage.myAccount.click();
-        ReusableMethods.waitFor(5);
-        allureMyAccount.storeManager.click();
-        ReusableMethods.waitFor(5);
-        Actions actions=new Actions(Driver.getDriver());
-        actions.sendKeys(Keys.PAGE_DOWN).perform();
-        allureStorePage.product.click();
-        ReusableMethods.waitFor(5);
-        jse.executeScript("arguments[0].click();",allureStorePage.addNew);
-        // allureStorePage.addNew.click();
-        ReusableMethods.waitFor(5);
+       ReusableMethods.clickByJS(allureHomePage.myAccount);
+       ReusableMethods.waitFor(3);
+       ReusableMethods.clickByJS(allureMyAccount.storeManager);
+        ReusableMethods.waitFor(3);
+//        Actions actions=new Actions(Driver.getDriver());
+//        actions.sendKeys(Keys.PAGE_DOWN).perform();
+      ReusableMethods.clickByJS(allureStorePage.product);
+        ReusableMethods.waitFor(3);
+        ReusableMethods.clickByJS(allureStorePage.addNew);
+        ReusableMethods.waitFor(3);
 
     }
     public static void loginKullanici() {

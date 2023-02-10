@@ -16,7 +16,7 @@ public class US18_TC05 {
     AllureStorePage allureStorePage = new AllureStorePage();
     AllureAddProduct allureAddProduct = new AllureAddProduct();
     @Test
-    public void TC004() throws IOException {
+    public void TC005() throws IOException {
         HomePage.LoginVendor();
         ReusableMethods.waitFor(5);
         HomePage.goToProduct();
@@ -26,7 +26,7 @@ public class US18_TC05 {
         Select simpleDropdown = new Select(allureStorePage.simpleProduct);
         simpleDropdown.selectByVisibleText("External/Affiliate Product");
         allureAddProduct.salePrice.sendKeys("19", Keys.ENTER);
-        actions.moveToElement(allureAddProduct.kucukFoto).perform();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.getScreenshot("ekran goruntusu4");
         Driver.closeDriver();
 

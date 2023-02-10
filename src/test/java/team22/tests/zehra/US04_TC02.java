@@ -49,6 +49,7 @@ public class US04_TC02{
         allureMyAccount.saveAdres.click();
         ReusableMethods.getScreenshot("US04 TC02");
         ReusableMethods.waitFor(2);
+        String expected="First name is a required field.";
         Assert.assertEquals(allureMyAccount.errorMessage.getText(),"First name is a required field.");
         Driver.closeDriver();
 
