@@ -23,13 +23,13 @@ public class US18_TC02 {
         HomePage.goToProduct();
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-        allureStorePage.simpleProduct.click();
+        ReusableMethods.clickByJS(allureStorePage.simpleProduct);
         Select simpleDropdown = new Select(allureStorePage.simpleProduct);
         simpleDropdown.selectByVisibleText("External/Affiliate Product");
         actions.moveToElement(allureAddProduct.kucukFoto).perform();
         ReusableMethods.waitFor(2);
         allureAddProduct.url.sendKeys("abc@abc.com",Keys.ENTER);
-        ReusableMethods.getScreenshot("ekran goruntusu1");
+        ReusableMethods.getScreenshot("us18 tc02");
         Driver.closeDriver();
     }
 

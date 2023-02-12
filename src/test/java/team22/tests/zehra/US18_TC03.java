@@ -26,9 +26,8 @@ public class US18_TC03 {
         allureStorePage.simpleProduct.click();
         Select simpleDropdown = new Select(allureStorePage.simpleProduct);
         simpleDropdown.selectByVisibleText("External/Affiliate Product");
-        actions.moveToElement(allureAddProduct.kucukFoto).perform();
         allureAddProduct.buttonText.sendKeys("super",Keys.ENTER);
-        actions.moveToElement(allureAddProduct.kucukFoto).perform();
+        actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.getScreenshot("ekran goruntusu2");
         Driver.closeDriver();
     }

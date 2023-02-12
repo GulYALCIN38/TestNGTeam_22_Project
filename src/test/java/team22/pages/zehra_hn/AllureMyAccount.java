@@ -27,7 +27,7 @@ public class AllureMyAccount {
     @FindBy(xpath="//input[@id='shipping_company']")
     public WebElement companyName;
 
-    @FindBy(id="select2-shipping_country-container")
+    @FindBy(xpath = "//select[@id='shipping_country']")
     public WebElement shippingCountry;
 
     @FindBy(id="select2-search__field")
@@ -42,8 +42,20 @@ public class AllureMyAccount {
     @FindBy(xpath="//input[@id='shipping_city']")
     public WebElement townCity;
 
-    @FindBy(xpath="//span[@id='select2-shipping_state-container']")
+    @FindBy(xpath="//select[@id='shipping_state']")
     public WebElement province;
+
+    @FindBy(xpath="//button[@class='btn btn-dark btn-rounded btn-sm']")
+    public WebElement saveAdres;
+
+    @FindBy(xpath = "//div[@class='woocommerce-notices-wrapper']//div[@class='woocommerce-message alert alert-simple alert-icon alert-close-top alert-success']")
+    public WebElement succesMessage;
+
+    @FindBy(xpath = "//ul[@class='woocommerce-error']//li[@class=' alert alert-simple alert-icon alert-close-top alert-danger']")
+    public WebElement errorMessage;
+
+    @FindBy(xpath = "//*[@id='email']")
+    public WebElement fakeMail;
 
 
 
