@@ -23,7 +23,7 @@ public class US04_TC02{
     AllureHomePage allureHomePage = new AllureHomePage();
 
     @Test
-    public void TC001() {
+    public void TC002() {
         //login islemleri ve add adrese kadar olan bolum
         HomePage.loginKullanici();
         ReusableMethods.waitFor(3);
