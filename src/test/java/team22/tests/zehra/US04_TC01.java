@@ -41,28 +41,28 @@ public class US04_TC01{
         homePage.registerUsername.sendKeys(username, Keys.TAB,mail,Keys.TAB,"ZRbam2007!",Keys.ENTER,Keys.SPACE,Keys.ENTER);
         ReusableMethods.waitFor(2);
         ReusableMethods.clickByJS( allureHomePage.myAccount);
-       allureMyAccount.adres.click();
-      ReusableMethods.clickByJS(allureMyAccount.shippingAdd);
-       ReusableMethods.waitFor(2);
+        allureMyAccount.adres.click();
+        ReusableMethods.clickByJS(allureMyAccount.shippingAdd);
+        ReusableMethods.waitFor(2);
 
 //        shipping adres bilgilerinin doldurulmasi
 
         allureMyAccount.shippingFirstname.sendKeys(faker.name().firstName());
         allureMyAccount.shippingLastname.sendKeys(faker.name().lastName());
-       // actions.sendKeys(Keys.PAGE_DOWN).perform();
+        // actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(5);
         Select select=new Select(allureMyAccount.shippingCountry);
         select.selectByVisibleText("Turkey");
         allureMyAccount.streetAdres.sendKeys(faker.address().streetAddress());
-       allureMyAccount.postcode.sendKeys("1234");
-       allureMyAccount.townCity.sendKeys("isparta");
-       Select province=new Select(allureMyAccount.province);
-      province.selectByVisibleText("Isparta");
-      ReusableMethods.clickByJS(allureMyAccount.saveAdres);
+        allureMyAccount.postcode.sendKeys("1234");
+        allureMyAccount.townCity.sendKeys("isparta");
+        Select province=new Select(allureMyAccount.province);
+        province.selectByVisibleText("Isparta");
+        ReusableMethods.clickByJS(allureMyAccount.saveAdres);
         ReusableMethods.getScreenshot("us04 tc01");
         ReusableMethods.waitFor(2);
         Assert.assertEquals(allureMyAccount.succesMessage.getText(),"Address changed successfully.");
-      Driver.closeDriver();
+        Driver.closeDriver();
 
 
 

@@ -51,11 +51,11 @@ public class HomePage {
 
         Driver.getDriver().get(ConfigReader.getProperty("app-url"));
         allureHomePage.signIn.click();
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         allureHomePage.mailKutusu.sendKeys(ConfigReader.getProperty("vendor-email"));
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
         allureHomePage.passwordKutusu.sendKeys(ConfigReader.getProperty("vendor-pass"));
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(1);
         allureHomePage.signInButton.click();
 
     }

@@ -5,17 +5,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import team22.utilities.Driver;
 
+//You shou first
+
+/*PageFactory >>>>>         class from the Selenium WebDriver
+library to initialize the WebElements defined in the class using the @FindBy annotations.
+ Driver.getDriver()....>>>> method returns the instance of the WebDriver
+  which is being used in the current test execution
+  */
 public class AddProduct {
     public AddProduct()
-    {//You shou first
-
-        /*PageFactory >>>>>         class from the Selenium WebDriver
-        library to initialize the WebElements defined in the class using the @FindBy annotations.
-         Driver.getDriver()....>>>> method returns the instance of the WebDriver
-          which is being used in the current test execution
-          */
-
-
+    {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
@@ -34,28 +33,34 @@ public class AddProduct {
     public WebElement menuStoreManager;
 
     // For the element with xpath: //*[@id="wcfm_menu"]/div[5]/a/span[1]
-   // @FindBy(xpath = "//a[@href='https://allure2you.com/store-manager/products/']")
-   // @FindBy(xpath = "//span[text()='Products']")
+    // @FindBy(xpath = "//a[@href='https://allure2you.com/store-manager/products/']")
+    // @FindBy(xpath = "//span[text()='Products']")
     @FindBy(xpath = "//a[contains(@href, 'allure2you.com/store-manager/products/')]")
     public WebElement products;
 
 
-   // @FindBy(xpath = "//*[@id='add_new_product_dashboard']/span[2]")
-   // @FindBy(id = "add_new_product_dashboard")
-    //@FindBy(xpath = "//a[@id='add_new_product_dashboard']")
+    // @FindBy(xpath = "//*[@id='add_new_product_dashboard']/span[2]")
+    // @FindBy(id = "add_new_product_dashboard")
+    @FindBy(xpath = "//a[@id='add_new_product_dashboard']")
 
-    @FindBy(css = "a#add_new_product_dashboard")
+   // @FindBy(css = "a#add_new_product_dashboard")
     public WebElement addNew;
 
     // For the select element with id: "product_type"
     @FindBy(xpath = "//select[@id='product_type']")
     public  WebElement productTypeSelect;
 
+    @FindBy(xpath = "//*[@id='catalog_visibility']")
+    public WebElement catalogVisibility;
     @FindBy(id = "pro_title")
     public  WebElement productTittleWrite;
+    @FindBy(id =" media-search-input")
+    public  WebElement searchinput;
 
+    @FindBy(className = "media-button-insert")
+    private WebElement insertIntoPostButton;
 
-  //  verify price elementaddable visible and clickable
+    //  verify price elementaddable visible and clickable
     @FindBy(id = "regular_price")
     public  WebElement regularPrice;
 
@@ -76,29 +81,37 @@ public class AddProduct {
     @FindBy(xpath = "//*[@id='insert-media-button']")
     public WebElement FirstinsertMediaButton;
 
-//   oplouad foto select butonu verify if visible, clickable.
+    //   oplouad foto select butonu verify if visible, clickable.
+    @FindBy(id = "featured_img_display")
+    public WebElement buyukFoto;
 
-     @FindBy(id = "__wp-uploader-id-1")
-     public  WebElement selectFilesButton;
+    @FindBy( id= "gallery_img_gimage_0_display")
+    public WebElement kucukFoto;
 
-     //verify if visible
-     @FindBy(css = ".upload-dismiss-errors")
-     public WebElement dismissErrorsmessage;
+//    @FindBy(xpath = "//button[@class='media-button button-primary button-large media-button-insert']")
+//    public WebElement insertIntoPostButton;
+
+    @FindBy(id = "__wp-uploader-id-1")
+    public  WebElement selectFilesButton;
+
+    //verify if visible
+    @FindBy(css = ".upload-dismiss-errors")
+    public WebElement dismissErrorsmessage;
 
 
     //   seconInsertMediaButton  verify if visible, clickable.
-     @FindBy(xpath = "//*[@id='wp-description-media-buttons']/button")
-     public  WebElement seconInsertMediaButton;
+    @FindBy(xpath ="//button[@class='button media-button button-primary button-large media-button-insert']")
+    public  WebElement InsertintoButton;
 
-     @FindBy(id = "product_url")
-     public  WebElement productUrl;
+    @FindBy(id = "product_url")
+    public  WebElement productUrl;
 
     @FindBy(id = "button_text")
     public  WebElement buttonText;
 
 
-    @FindBy(id ="catalog_visibility")
-    public  WebElement catalogVisibility;
+//    @FindBy(id ="catalog_visibility")
+//    public  WebElement catalogVisibility;
 
     @FindBy(id="wcfm_products_simple_submit_button")
     public  WebElement submitButton;
@@ -112,6 +125,13 @@ public class AddProduct {
 
     @FindBy(xpath="//*[@class='button wcfm_add_category_bt wcfm_add_taxonomy_bt']")
     public  WebElement AfterSelectAddButton ;
+
+    @FindBy(xpath="//*[@id='menu-item-browse']" )
+    public  WebElement medialibrary ;
+
+    @FindBy(className = "product_cats_checklist_item checklist_item_298")
+    public WebElement checkbox;
+
 
 
 
