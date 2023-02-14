@@ -79,7 +79,9 @@ public class TC_02 {
         ReusableMethods.getScreenshot("NegativeFirstname");
         ReusableMethods.waitFor(2);
         Assert.assertEquals(homepageGul.ereurMessage.getText(),"First name is a required field.");
+        ReusableMethods.waitFor(2);
 
+        ReusableMethods.clickByJS(homepageGul.logout);
 
 
 

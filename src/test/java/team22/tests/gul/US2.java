@@ -44,7 +44,12 @@ public class US2 {
         assert actuelResult.contains(expeectedResult);
         ReusableMethods.waitFor(2);
 
-        Driver.closeDriver();
+        homepageGul.closeRegister.click();
+        ReusableMethods.waitFor(1);
+
+
+
+
     }
 
 }

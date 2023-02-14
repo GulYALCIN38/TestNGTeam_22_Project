@@ -77,7 +77,9 @@ public class TC_07 {
         ReusableMethods.waitFor(2);
         Assert.assertEquals(homepageGul.ereurMessage.getText(),"Phone is a required field.");
 
+        ReusableMethods.waitFor(2);
 
+        ReusableMethods.clickByJS(homepageGul.logout);
 
 
     }

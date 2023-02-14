@@ -19,6 +19,9 @@ public class HomepageGul {
     @FindBy(xpath = "//*[text()='An account is already registered with your email address. ']")
     public WebElement uyariRegister;
 
+    @FindBy(xpath = "//button[@class='mfp-close']")
+    public WebElement closeRegister;
+
     @FindBy(linkText = "My Account")
     public WebElement myAccount;
 
@@ -64,14 +67,17 @@ public class HomepageGul {
     @FindBy(xpath = "//*[@id='email']")
     public WebElement fakemail;
 
-    public void ilkAdimlar(){
+    @FindBy(xpath = "//a[text()='Logout']")
+    public WebElement logout;
 
+    public void ilkAdimlar(){
+        ReusableMethods.waitFor(1);
         homePage.login(ConfigReader.getProperty("username"),ConfigReader.getProperty("password"));
         ReusableMethods.waitFor(3);
 
         //Kullanici, My Account butonuna tiklar
         myAccount.click();
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
 
 
         //Kullanici Addresse bolumune tiklar.

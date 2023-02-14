@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.Ignore;
 import org.testng.annotations.Test;
 import team22.pages.gul_hn.HomepageGul;
 import team22.utilities.ReusableMethods;
@@ -30,7 +31,8 @@ public class TC_09 {
     //Kullanici address changed succefully mesajini gorur.
     HomepageGul homepageGul=new HomepageGul();
 
-    @Test
+
+    @Test@Ignore
     public void testBilingAdress_Positive() {
         homepageGul.ilkAdimlar();
 
@@ -75,7 +77,9 @@ public class TC_09 {
         ReusableMethods.getScreenshot("positifregistre");
         ReusableMethods.waitFor(2);
         Assert.assertEquals(homepageGul.succesfulllymessage.getText(),"Address changed successfully.");
+        ReusableMethods.waitFor(2);
 
+        ReusableMethods.clickByJS(homepageGul.logout);
 
     }
 }

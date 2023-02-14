@@ -74,7 +74,9 @@ public class TC_03 {
         ReusableMethods.getScreenshot("NegativeLaststname");
         ReusableMethods.waitFor(2);
         Assert.assertEquals(homepageGul.ereurMessage.getText(),"Last name is a required field.");
+        ReusableMethods.waitFor(2);
 
+        ReusableMethods.clickByJS(homepageGul.logout);
 
 
     }

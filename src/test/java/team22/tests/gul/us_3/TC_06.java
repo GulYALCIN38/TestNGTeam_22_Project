@@ -75,6 +75,8 @@ public class TC_06 {
         ReusableMethods.waitFor(2);
         Assert.assertEquals(homepageGul.ereurMessage.getText(),"Town / City is a required field.");
 
+        ReusableMethods.waitFor(2);
 
+        ReusableMethods.clickByJS(homepageGul.logout);
     }
 }
