@@ -97,7 +97,9 @@ public class TC_10_positive_dynamique {
 
 
 
+        ReusableMethods.waitFor(2);
 
+        ReusableMethods.clickByJS(homepageGul.logout);
 
 
 

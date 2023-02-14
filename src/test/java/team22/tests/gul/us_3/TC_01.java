@@ -3,9 +3,11 @@ package team22.tests.gul.us_3;
 import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team22.pages.gul_hn.HomepageGul;
+import team22.utilities.Driver;
 import team22.utilities.ReusableMethods;
 
 import java.time.Duration;
@@ -30,6 +32,7 @@ public class TC_01 {
     HomepageGul homepageGul=new HomepageGul();
     @Test
     public void testCountryRegion_negatif() {
+
         homepageGul.ilkAdimlar();
 
 
@@ -68,6 +71,9 @@ public class TC_01 {
         Assert.assertEquals(w.getText(),"Country / Region is a required field.");
 
 
+        ReusableMethods.waitFor(2);
+
+        ReusableMethods.clickByJS(homepageGul.logout);
 
 
     }

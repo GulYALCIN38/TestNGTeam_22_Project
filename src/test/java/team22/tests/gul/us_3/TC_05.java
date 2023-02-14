@@ -74,7 +74,9 @@ public class TC_05 {
         ReusableMethods.waitFor(2);
         Assert.assertEquals(homepageGul.ereurMessage.getText(),"Postcode / ZIP is a required field.");
 
+        ReusableMethods.waitFor(2);
 
+        ReusableMethods.clickByJS(homepageGul.logout);
 
     }
 }

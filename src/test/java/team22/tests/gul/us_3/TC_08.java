@@ -76,7 +76,9 @@ public class TC_08 {
 
 
 
+        ReusableMethods.waitFor(2);
 
+        ReusableMethods.clickByJS(homepageGul.logout);
 
 
 

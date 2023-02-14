@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/ASUS/IdeaProjects/TestNGTeam22_project/src/test/java/team22/tests/gul">
+        <classes>
+            <class name="team22.tests.gul.US2">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_01">
+                <methods>
+                    <include name="testCountryRegion_negatif"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_02">
+                <methods>
+                    <include name="testfirstname_negatif"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_03">
+                <methods>
+                    <include name="testlastName_negative"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_04">
+                <methods>
+                    <include name="testAdres_NegativeTest"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_05">
+                <methods>
+                    <include name="testZip_negative"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_06">
+                <methods>
+                    <include name="testCity_negative"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_07">
+                <methods>
+                    <include name="testPhone_negative"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_08">
+                <methods>
+                    <include name="testEmail_negative"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_09">
+                <methods>
+                    <include name="testBilingAdress_Positive"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_10_positive_dynamique">
+                <methods>
+                    <include name="test_positive"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

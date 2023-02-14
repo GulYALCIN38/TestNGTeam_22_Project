@@ -70,7 +70,9 @@ public class TC_04 {
         ReusableMethods.getScreenshot("NegativeAdress");
         ReusableMethods.waitFor(2);
         Assert.assertEquals(homepageGul.ereurMessage.getText(),"Street address is a required field.");
+        ReusableMethods.waitFor(2);
 
+        ReusableMethods.clickByJS(homepageGul.logout);
 
 
 
