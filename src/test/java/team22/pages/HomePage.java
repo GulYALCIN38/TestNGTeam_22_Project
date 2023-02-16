@@ -48,7 +48,6 @@ public class HomePage {
         AllureHomePage allureHomePage = new AllureHomePage();
         AllureMyAccount allureMyAccount = new AllureMyAccount();
         AllureStorePage allureStorePage = new AllureStorePage();
-
         Driver.getDriver().get(ConfigReader.getProperty("app-url"));
         allureHomePage.signIn.click();
         ReusableMethods.waitFor(3);

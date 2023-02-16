@@ -13,9 +13,12 @@ public class Registeration {
     public Registeration() {
         PageFactory.initElements(Driver.getDriver(), this);
     }
+    @FindBy(xpath="(//*[text()='My Account'])[1]")
+    public WebElement myAccount;
 
     @FindBy(xpath = "//*[@class='register inline-type']")
     public WebElement registerButonu;
+
     @FindBy(xpath = "(//*[@id='signup']/form/button)[1]")
     private WebElement signUpButton;
 

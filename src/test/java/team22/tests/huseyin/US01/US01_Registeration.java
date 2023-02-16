@@ -21,8 +21,6 @@ public class US01_Registeration {
     HomePage homePage = new HomePage();
     Registeration registeration = new Registeration();
     AddProduct addProduct= new AddProduct();
-
-
     @Test
     public void TC001() {
 
@@ -30,13 +28,12 @@ public class US01_Registeration {
  enter Your Email address *
 enter Password *
  enter I agree to the privacy policy*/
-        Driver.getDriver().get(ConfigReader.getProperty("app-url"));
-        ReusableMethods.waitFor(2);
+        Driver.getDriver().get(ConfigReader.getProperty("website-url"));
         Faker faker = new Faker();
         String username = faker.name().fullName();
         String email = faker.internet().emailAddress();
         String paswoord = faker.internet().password();
-        Driver.getDriver().get(ConfigReader.getProperty("app-url"));
+        ReusableMethods.waitFor(2);
         ReusableMethods.clickByJS(homePage.registerButonu);
         homePage.registerUsername.sendKeys("", Keys.TAB, email, Keys.TAB,paswoord, Keys.ENTER, Keys.SPACE, Keys.ENTER);
         ReusableMethods.waitFor(3);
@@ -44,9 +41,8 @@ enter Password *
         ReusableMethods.scrollDownActions();
         String expectedTitle = "My Account";
         String actualTitle = registeration.pageTitle.getText();
-        Assert.assertNotEquals(actualTitle,expectedTitle);
-
-
+        Assert.assertNotEquals(actualTitle,expectedTitle,"you didnt see know the page title this means +/n that the test passed but  yo cannnot log int without usrname");
 
     }
 }
+

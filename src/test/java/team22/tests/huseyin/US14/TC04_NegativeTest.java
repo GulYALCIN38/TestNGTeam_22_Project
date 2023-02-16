@@ -8,6 +8,7 @@ import team22.pages.HomePage;
 import team22.pages.huseyin_bey.AddProduct;
 import team22.pages.zehra_hn.AllureAddProduct;
 import team22.pages.zehra_hn.AllureStorePage;
+import team22.utilities.ConfigReader;
 import team22.utilities.Driver;
 import team22.utilities.ReusableMethods;
 
@@ -20,7 +21,8 @@ public class TC04_NegativeTest {
 
     @Test
     public void test1() {
-        HomePage.LoginVendor();// login
+        Driver.getDriver().get(ConfigReader.getProperty("app-url"));
+        homePage.registerButonu.click();
         ReusableMethods.waitFor(3);
         HomePage.goToProduct();
         ReusableMethods.waitFor(2);

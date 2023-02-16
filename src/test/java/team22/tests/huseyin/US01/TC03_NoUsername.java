@@ -12,36 +12,31 @@ import team22.utilities.Driver;
 import team22.utilities.ReusableMethods;
 
 public class TC03_NoUsername {
-    HomePage homePage = new HomePage();
     Registeration registeration = new Registeration();
-    AddProduct addProduct= new AddProduct();
-
-
-    @Test
-    public void TC001() {
+    HomePage homePage= new HomePage();
 
 /* enter Username *
  enter Your Email address *
 enter Password *
  enter I agree to the privacy policy*/
-        Driver.getDriver().get(ConfigReader.getProperty("app-url"));
-        ReusableMethods.waitFor(2);
-        Faker faker = new Faker();
-        String username = faker.name().fullName();
-        String email = faker.internet().emailAddress();
-        String paswoord = faker.internet().password();
-        Driver.getDriver().get(ConfigReader.getProperty("app-url"));
-        ReusableMethods.clickByJS(homePage.registerButonu);
-        homePage.registerUsername.sendKeys(username, Keys.TAB, email, Keys.TAB,paswoord, Keys.ENTER, Keys.SPACE, Keys.ENTER);
-        ReusableMethods.waitFor(3);
-        addProduct.myAccount.click();
+@Test
+public void TC002() {
+    Driver.getDriver().get(ConfigReader.getProperty("app-url"));
+    registeration.registerButonu.click();
+    ReusableMethods.waitFor(3);
+    registeration.signUp.click();
+    ReusableMethods.waitFor(2);
+    Faker faker = new Faker();
+    String username = faker.name().fullName();
+    String email = faker.internet().emailAddress();
+    String paswoord = faker.internet().password();
+    homePage.registerUsername.sendKeys("", Keys.TAB, email, Keys.TAB,paswoord, Keys.ENTER, Keys.SPACE, Keys.ENTER);
+    ReusableMethods.waitFor(2);
+
         ReusableMethods.scrollDownActions();
-        String expectedTitle = "My Account";
+        String expectedTitle = "My account";
         String actualTitle = registeration.pageTitle.getText();
-        Assert.assertEquals(actualTitle,expectedTitle);
-
-
-
+        Assert.assertEquals(actualTitle,expectedTitle," test passed"+"you are wonderfull hugo");
     }
 }
 

@@ -55,14 +55,11 @@ Kullanici  Hidden yazisini secer*/
 
         addProduct.products.click();// get to add productpage
         ReusableMethods.waitFor(3);
-
         actions.sendKeys(Keys.PAGE_DOWN).perform();
-
         ReusableMethods.waitFor(4);
         //actions.moveToElement( addProduct.addNew).click().perform();
-         addProduct.addNew.click();// get to
+        addProduct.addNew.click();// get to
         ReusableMethods.waitFor(3);
-
         Select simpleDropdown = new Select(addProduct.productTypeSelect);
         simpleDropdown.selectByVisibleText("Simple Product");
         ReusableMethods.waitFor(1);
@@ -77,11 +74,11 @@ Kullanici  Hidden yazisini secer*/
                 "is working better than expected",Keys.ENTER ,Keys.TAB,Keys.TAB,Keys.TAB);
 
         ReusableMethods.waitFor(3);
-       // actions.sendKeys(Keys.ARROW_RIGHT).click().perform();// write short descripiton);
+        // actions.sendKeys(Keys.ARROW_RIGHT).click().perform();// write short descripiton);
         addProduct.medialibrary.click();
         ReusableMethods.waitFor(2);
         actions.sendKeys(Keys.TAB,
-                            Keys.TAB,Keys.TAB,
+                Keys.TAB,Keys.TAB,
                 Keys.TAB,Keys.TAB,Keys.ENTER).perform();
         ReusableMethods.waitFor(2);
         addProduct.InsertintoButton.click();
