@@ -1,6 +1,9 @@
 package team22.tests.sevim;
 
 import com.github.javafaker.Faker;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.apache.poi.ss.usermodel.Workbook;
 import org.checkerframework.checker.units.qual.K;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -11,8 +14,10 @@ import team22.pages.HomePage;
 import team22.pages.HomePage;
 import team22.pages.sevim_hn.CheckoutPage;
 import team22.pages.sevim_hn.HomePage_svm;
+import team22.pages.sevim_hn.MyAccountPage;
 import team22.utilities.ConfigReader;
 import team22.utilities.Driver;
+import team22.utilities.ExcelUtils;
 import team22.utilities.ReusableMethods;
 
 import java.security.Key;
@@ -22,8 +27,9 @@ public class US_19 {
 
     HomePage_svm homePage_svm = new HomePage_svm();
     CheckoutPage checkoutPage = new CheckoutPage();
+    MyAccountPage myAccountPage=new MyAccountPage();
     HomePage homePage=new HomePage();
-    Actions actions = new Actions(Driver.getDriver());
+
     Faker faker=new Faker();
     String firstname=faker.name().firstName();
     String lastname=faker.name().lastName();
@@ -278,22 +284,18 @@ public class US_19 {
 
 
 
-
-
-
-
-
     }
+
 
     @Test
     public void test6() {
 
         homePage.login(ConfigReader.getProperty("vendor-email"), ConfigReader.getProperty("vendor-pass"));
         ReusableMethods.waitFor(3);
-
-
-
-
+        ReusableMethods.clickByJS(homePage_svm.MyAccountButton);
+        ReusableMethods.waitFor(2);
+        ReusableMethods.clickByJS(myAccountPage.orderButton);
+        Assert.assertTrue(myAccountPage.ordersHeader.isDisplayed());
     }
 
     }

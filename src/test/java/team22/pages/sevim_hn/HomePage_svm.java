@@ -1,13 +1,10 @@
 package team22.pages.sevim_hn;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.PageFactory;
 import team22.utilities.Driver;
 
-import java.util.List;
 
 public class HomePage_svm {
 
@@ -47,7 +44,7 @@ public class HomePage_svm {
 
 
 
-    @FindBy(xpath = "//li[@id='menu-item-1074']")
+    @FindBy(xpath = "(//*[text()='My Account'])[1]")
     public WebElement MyAccountButton;
 
 

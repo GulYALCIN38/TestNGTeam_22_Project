@@ -2,8 +2,14 @@ package team22.pages.sevim_hn;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import team22.utilities.Driver;
 
 public class CheckoutPage {
+
+    public CheckoutPage() {
+        PageFactory.initElements(Driver.getDriver(), this);
+    }
 
     @FindBy(xpath = "//h3[@id='order_review_heading']")
     public WebElement productReview;
