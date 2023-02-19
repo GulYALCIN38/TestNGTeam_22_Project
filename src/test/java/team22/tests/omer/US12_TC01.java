@@ -1,28 +1,24 @@
 package team22.tests.omer;
-import org.testng.Assert;
+
 import org.testng.annotations.Test;
 import team22.pages.omer_bey.AccountPage;
+import team22.pages.omer_bey.AddressesPage;
 import team22.pages.omer_bey.HomePage;
-import team22.pages.zehra_hn.AllureStorePage;
 import team22.utilities.ConfigReader;
 import team22.utilities.Driver;
 import team22.utilities.ReusableMethods;
 
-
-public class US11_TC01 {
+public class US12_TC01 {
 
 
     @Test
-    public void Test01() {
-//        siteye a git
-//       driver -> Driver.getDriver()
-//        ConfigReader.getProperty("amazon_url") -> https://allure2you.com/
-//        Driver.getDriver().get(ConfigReader.getProperty("app-url")); //https://allure2you.com/
+    public void Test01_02_03() {
 
 
 
         HomePage homePage = new HomePage();
-        AccountPage accountPage= new AccountPage();
+        AccountPage accountPage = new AccountPage();
+        AddressesPage addressesPage = new AddressesPage();
 
         Driver.getDriver().get(ConfigReader.getProperty("app-url"));
         homePage.signIn.click();
@@ -33,18 +29,13 @@ public class US11_TC01 {
         ReusableMethods.waitFor(2);
         homePage.signInButton.click();
 
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         homePage.myAccount.click();
 
-        Assert.assertTrue(accountPage.myaccounttext.isDisplayed());
+        ReusableMethods.waitFor(1);
+        accountPage.addresses1.click();
 
-
-
-
-        // ProjeAllure.myAccount.click();
-
-        // ProjeAllure.signIn.click();
-     //   allureHomePage.signIn.click();
-        //   ReusableMethods.waitFor(3);
-
-    }}
+        ReusableMethods.waitFor(1);
+        addressesPage.edit1.click();
+    }
+}
