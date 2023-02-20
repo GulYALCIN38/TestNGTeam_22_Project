@@ -11,11 +11,13 @@ public class MyStorePage {
         PageFactory.initElements(Driver.getDriver(),this);
     }
 
-    @FindBy(xpath = "//*[@class='wcfm_menu_items wcfm_menu_wcfm-coupons']")
+    @FindBy(xpath = "//*[@class='wcfm_menu_items wcfm_menu_wcfm-coupons']/a")
     public WebElement CouponsButton;
 
-    @FindBy(xpath = "//*[@class='wcfm_sub_menu_items wcfm_sub_menu_items_coupon_manage moz_class']")
+    @FindBy(xpath = "//*[@id='add_new_coupon_dashboard']")
     public WebElement CouponsAddNew;
+
+
 
 
 
