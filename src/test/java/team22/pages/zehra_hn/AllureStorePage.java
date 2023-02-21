@@ -12,6 +12,7 @@ public class AllureStorePage {
     @FindBy(xpath="(//span[@class='text'])[4]")
     public WebElement product;
 
+
     @FindBy(xpath="(//*[text()='Add New'])[1]")
     public WebElement addNew;
 

@@ -69,7 +69,7 @@ public class HomePage {
        ReusableMethods.clickByJS(allureMyAccount.storeManager);
         ReusableMethods.waitFor(3);
 //        Actions actions=new Actions(Driver.getDriver());
-//        actions.sendKeys(Keys.PAGE_DOWN).perform();
+//        ReusableMethods.scrollDownActions();
       ReusableMethods.clickByJS(allureStorePage.product);
         ReusableMethods.waitFor(3);
         ReusableMethods.clickByJS(allureStorePage.addNew);
@@ -80,15 +80,16 @@ public class HomePage {
         AllureHomePage allureHomePage = new AllureHomePage();
         AllureMyAccount allureMyAccount = new AllureMyAccount();
         AllureStorePage allureStorePage = new AllureStorePage();
+        ReusableMethods.waitFor(1);
 
         Driver.getDriver().get(ConfigReader.getProperty("app-url"));
-        allureHomePage.signIn.click();
+        ReusableMethods.clickByJS(allureHomePage.signIn);
         ReusableMethods.waitFor(5);
         allureHomePage.mailKutusu.sendKeys(ConfigReader.getProperty("kul-email"));
         ReusableMethods.waitFor(2);
         allureHomePage.passwordKutusu.sendKeys(ConfigReader.getProperty("kul-pass"));
         ReusableMethods.waitFor(5);
-        allureHomePage.signInButton.click();
+        ReusableMethods.clickByJS(allureHomePage.signInButton);
 
     }
 
