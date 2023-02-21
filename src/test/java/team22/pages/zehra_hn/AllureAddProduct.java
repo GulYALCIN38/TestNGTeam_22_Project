@@ -26,6 +26,10 @@ public class AllureAddProduct {
     @FindBy(id = "featured_img_display")
     public WebElement buyukFoto;
 
+    @FindBy(xpath = "//button[@class='browser button button-hero']")
+    public WebElement selectFiles;
+    @FindBy(xpath = "(//*[@class='media-menu-item active'])[4]")
+    public WebElement uploadFiles;
     @FindBy( id= "gallery_img_gimage_0_display")
     public WebElement kucukFoto;
 
@@ -34,12 +38,6 @@ public class AllureAddProduct {
 
     @FindBy(id = "menu-item-browse")
     public WebElement mediaLibrary;
-
-    @FindBy(xpath= "//body/div[@id='__wp-uploader-id-2']/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[3]/ul[1]/li[5]/div[1]/div[1]")
-    public WebElement kolyeFoto;
-
-    @FindBy(xpath= "//body/div[@id='__wp-uploader-id-5']/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[3]/ul[1]/li[5]/div[1]/div[1]")
-    public WebElement kolyeFoto2;
 
     @FindBy(xpath= "//*[@class='button media-button button-primary button-large media-button-select']")
     public WebElement selectButton;
@@ -55,20 +53,14 @@ public class AllureAddProduct {
     public WebElement selectFile;
     @FindBy(id= "wcfm_products_simple_submit_button")
     public WebElement submitButton;
-
     @FindBy(xpath= "//body[@data-rsssl='1']")
     public WebElement succesMessage2;
 
-    @FindBy(xpath= "//body/div[@id='__wp-uploader-id-2']/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[3]/ul[1]/li[1]/div[1]/div[1]")
-    public WebElement canta;
+    @FindBy(xpath= "//*[text()='Sign Out']")
+    public WebElement signOut;
 
-    @FindBy(xpath= "//body/div[@id='__wp-uploader-id-5']/div[1]/div[1]/div[1]/div[3]/div[2]/div[1]/div[3]/ul[1]/li[1]/div[1]/div[1]")
-    public WebElement canta2;
-
-
-    @FindBy(xpath= "//tbody/tr[2]/td[2]/a[1]/img[1]")
-    public WebElement canta3;
-
+    @FindBy(xpath = "//a[text()='Logout']")
+    public WebElement logout;
 
 }
 
