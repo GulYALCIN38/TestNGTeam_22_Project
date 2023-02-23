@@ -59,7 +59,7 @@ public class AddCouponsPage {
     @FindBy(xpath = "(//*[@class='select2-search__field'])[3]")
     public WebElement categories;
 
-    @FindBy(xpath = "(//*[@class='select2-search__field'])[4]")
+    @FindBy(xpath = "//*[@id='exclude_product_categories']")
     public WebElement excludedCategories;
 
     @FindBy(xpath = "(//input[@type='submit']) [1]")

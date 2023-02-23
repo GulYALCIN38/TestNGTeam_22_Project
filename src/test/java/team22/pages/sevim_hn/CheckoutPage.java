@@ -64,4 +64,14 @@ public class CheckoutPage {
 
     @FindBy(xpath = "//*[@class='woocommerce-error']")
     public WebElement successMessage;
+
+    @FindBy(xpath = "//*[@class='woocommerce-notice woocommerce-notice--success woocommerce-thankyou-order-received order-success']")
+    public WebElement orderReceivedMessage;
+
+    @FindBy(xpath = "//a[@class='showcoupon']")
+    public WebElement enterYourCode;
+
+    @FindBy(xpath = "//input[@name='coupon_code']")
+    public WebElement couponCode;
+
 }

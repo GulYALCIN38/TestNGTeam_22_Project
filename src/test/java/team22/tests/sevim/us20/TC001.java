@@ -1,30 +1,27 @@
-package team22.tests.sevim;
+package team22.tests.sevim.us20;
 
 import com.github.javafaker.Faker;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import team22.pages.HomePage;
 import team22.pages.sevim_hn.*;
 import team22.utilities.ConfigReader;
-import team22.utilities.Driver;
 import team22.utilities.ReusableMethods;
 
-public class US_20 {
+public class TC001 {
 
-    HomePage_svm homePage_svm = new HomePage_svm();
-    CheckoutPage checkoutPage = new CheckoutPage();
-    MyAccountPage myAccountPage = new MyAccountPage();
-    HomePage homePage = new HomePage();
-    MyStorePage myStorePage = new MyStorePage();
-    AddCouponsPage addCouponsPage = new AddCouponsPage();
-    Faker faker = new Faker();
+
     @Test
     public void test01() {
-
+            HomePage_svm homePage_svm = new HomePage_svm();
+            CheckoutPage checkoutPage = new CheckoutPage();
+            MyAccountPage myAccountPage = new MyAccountPage();
+            HomePage homePage = new HomePage();
+            MyStorePage myStorePage = new MyStorePage();
+            AddCouponsPage addCouponsPage = new AddCouponsPage();
+            Faker faker = new Faker();
             homePage.login(ConfigReader.getProperty("vendor-email"), ConfigReader.getProperty("vendor-pass"));
             ReusableMethods.waitForClickablility(homePage_svm.MyAccountButton, 3);
             ReusableMethods.waitFor(4);
@@ -32,7 +29,7 @@ public class US_20 {
             ReusableMethods.clickByJS(myAccountPage.storeManager);
             ReusableMethods.clickByJS(myStorePage.CouponsButton);
             ReusableMethods.clickByJS(myStorePage.CouponsAddNew);
-            addCouponsPage.codeArea.sendKeys(ConfigReader.getProperty("coupon_code"), Keys.TAB,ConfigReader.getProperty("coupon_description"));
+            addCouponsPage.codeArea.sendKeys(faker.witcher().character(), Keys.TAB,ConfigReader.getProperty("coupon_description"));
             Select select = new Select(addCouponsPage.discountType);
             select.selectByIndex(0);
             addCouponsPage.couponAmount.clear();
@@ -71,16 +68,19 @@ public class US_20 {
             ReusableMethods.hover(addCouponsPage.highlightedOption);
             addCouponsPage.highlightedOption.click();
 
-            addCouponsPage.excludedCategories.sendKeys(ConfigReader.getProperty("excludeCategories"),Keys.ENTER);
-            ReusableMethods.waitForVisibility(addCouponsPage.highlightedOption,3);
-            ReusableMethods.scrollIntoViewJS(addCouponsPage.highlightedOption);
-            ReusableMethods.hover(addCouponsPage.highlightedOption);
-            addCouponsPage.highlightedOption.click();
-
+            Select excludedCategoriesDropdown = new Select(addCouponsPage.excludedCategories);
+            excludedCategoriesDropdown.selectByIndex(80);//Trending
 
             addCouponsPage.customerEmail.sendKeys(faker.howIMetYourMother().character()+"@email.com");
+            ReusableMethods.clickByJS(addCouponsPage.submit);
+            ReusableMethods.waitFor(3);
+
+            homePage_svm.logout();
 
 
 
         }
+
+
+
     }
