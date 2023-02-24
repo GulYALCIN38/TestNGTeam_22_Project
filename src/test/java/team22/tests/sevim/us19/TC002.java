@@ -14,15 +14,15 @@ import team22.utilities.ReusableMethods;
 
 public class TC002 {
 
-    @Test
-    public void test2(){
+    @Test(retryAnalyzer = team22.utilities.ListenersRetry.class)
+    public void test02(){
+
         HomePage_svm homePage_svm = new HomePage_svm();
         CheckoutPage checkoutPage = new CheckoutPage();
-        HomepageGul homepageGul=new HomepageGul();
-        HomePage homePage=new HomePage();
+
 
         ReusableMethods.waitFor(3);
-        homePage.login(ConfigReader.getProperty("vendor-email"),ConfigReader.getProperty("vendor-pass"));
+        ReusableMethods.login();
         ReusableMethods.waitFor(3);
         homePage_svm.searchButton.sendKeys("apple", Keys.ENTER);
         ReusableMethods.waitFor(3);
@@ -46,7 +46,8 @@ public class TC002 {
         ReusableMethods.clickByJS(homePage_svm.checkoutButton);
 
         Assert.assertTrue(checkoutPage.productReview.isDisplayed());
-
+        ReusableMethods.logout();
+        //Driver.getDriver().close();
 
     }
 

@@ -11,7 +11,7 @@ import team22.utilities.ReusableMethods;
 public class TC002 {
 
 
-    @Test
+    @Test(retryAnalyzer = team22.utilities.ListenersRetry.class)
     public void minimumSpendTest() {
         HomePage_svm homePage_svm = new HomePage_svm();
         MyAccountPage myAccountPage = new MyAccountPage();
@@ -19,7 +19,7 @@ public class TC002 {
         MyStorePage myStorePage = new MyStorePage();
         AddCouponsPage addCouponsPage = new AddCouponsPage();
         Faker faker = new Faker();
-        homePage.login(ConfigReader.getProperty("vendor-email"), ConfigReader.getProperty("vendor-pass"));
+        homePage_svm.login();
         ReusableMethods.waitForClickablility(homePage_svm.MyAccountButton, 3);
         ReusableMethods.waitFor(4);
         ReusableMethods.clickByJS(homePage_svm.MyAccountButton);

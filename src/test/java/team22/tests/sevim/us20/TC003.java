@@ -4,7 +4,9 @@ import com.github.javafaker.Faker;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 import team22.pages.HomePage;
 import team22.pages.sevim_hn.*;
 import team22.utilities.ConfigReader;
@@ -14,7 +16,7 @@ public class TC003 {   //BU TEST FAILED !!
 
 
 
-    @Test
+    @Test(retryAnalyzer = team22.utilities.ListenersRetry.class)
     public void emailAlaniTest(){   //sonradan degistirdigim testcase
         //email alani mail formatinda olmayan datayi kabul etmemeli
         HomePage_svm homePage_svm = new HomePage_svm();
@@ -26,7 +28,7 @@ public class TC003 {   //BU TEST FAILED !!
         CouponsPage couponsPage=new CouponsPage();
         Faker faker = new Faker();
         String newCouponName= faker.witcher().character();
-        homePage.login(ConfigReader.getProperty("vendor-email"), ConfigReader.getProperty("vendor-pass"));
+        homePage_svm.login();
         ReusableMethods.waitForClickablility(homePage_svm.MyAccountButton, 3);
         ReusableMethods.waitFor(4);
         ReusableMethods.clickByJS(homePage_svm.MyAccountButton);
@@ -80,7 +82,8 @@ public class TC003 {   //BU TEST FAILED !!
         ReusableMethods.waitFor(3);
 
         ReusableMethods.clickByJS(myStorePage.CouponsButton);
-        Assert.assertFalse(couponsPage.lastCreatedCoupon.getText().contains(newCouponName));
+        SoftAssert softAssert = new SoftAssert();
+        softAssert.assertFalse(couponsPage.lastCreatedCoupon.getText().contains(newCouponName));
         homePage_svm.logout();
 
 

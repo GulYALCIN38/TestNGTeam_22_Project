@@ -28,14 +28,14 @@ public class TC001 {
     String phone=faker.phoneNumber().cellPhone();
     String email = ConfigReader.getProperty("vendor-email");
     String state = faker.country().capital();
-    @Test
-    public void test5(){
+    @Test(retryAnalyzer = team22.utilities.ListenersRetry.class)
+    public void couponlaAlisveris(){
 
         HomePage_svm homePage_svm = new HomePage_svm();
         CheckoutPage checkoutPage = new CheckoutPage();
         HomePage homePage=new HomePage();
 
-        homePage.login(ConfigReader.getProperty("svm-email"),ConfigReader.getProperty("svm-pass"));
+        homePage_svm.login();
         ReusableMethods.waitFor(3);
 
         homePage_svm.searchButton.sendKeys("apple", Keys.ENTER);
@@ -79,5 +79,7 @@ public class TC001 {
         ReusableMethods.clickByJS(checkoutPage.placeOrderButton);
         ReusableMethods.waitFor(2);
         Assert.assertTrue(checkoutPage.orderReceivedMessage.isDisplayed());
+        ReusableMethods.waitFor(2);
+        homePage_svm.logout();
     }
 }

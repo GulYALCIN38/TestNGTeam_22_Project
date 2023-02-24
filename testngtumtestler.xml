@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+<!--    <listeners>-->
+<!--        <listener class-name="team22.tests.sevim.us19.TC001"></listener>-->
+<!--        <listener class-name="team22.tests.sevim.us19.TC002"></listener>-->
+<!--        <listener class-name="team22.tests.sevim.us19.TC003"></listener>-->
+<!--        <listener class-name="team22.tests.sevim.us19.TC004"></listener>-->
+<!--        <listener class-name="team22.tests.sevim.us19.TC005"></listener>-->
+<!--        <listener class-name="team22.tests.sevim.us19.TC006"></listener>-->
+<!--        <listener class-name="team22.tests.sevim.us20.TC001"></listener>-->
+<!--        <listener class-name="team22.tests.sevim.us19.TC002"></listener>-->
+<!--        <listener class-name="team22.tests.sevim.us19.TC003"></listener>-->
+<!--        <listener class-name="team22.tests.sevim.us22.TC001"></listener>-->
+
+<!--        </listeners>-->
+    <test verbose="2" preserve-order="true" name="C:/Users/sevim/IdeaProjects/OkulProjesi/TestNGTeam_22_Project">
+        <classes>
+            <class name="team22.tests.gul.US2">
+                <methods>
+                    <include name="testName"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_01">
+                <methods>
+                    <include name="testCountryRegion_negatif"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_02">
+                <methods>
+                    <include name="testfirstname_negatif"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_03">
+                <methods>
+                    <include name="testlastName_negative"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_04">
+                <methods>
+                    <include name="testAdres_NegativeTest"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_05">
+                <methods>
+                    <include name="testZip_negative"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_06">
+                <methods>
+                    <include name="testCity_negative"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_07">
+                <methods>
+                    <include name="testPhone_negative"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_08">
+                <methods>
+                    <include name="testEmail_negative"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_09">
+                <methods>
+                    <include name="testBilingAdress_Positive"/>
+                </methods>
+            </class>
+            <class name="team22.tests.gul.us_3.TC_10_positive_dynamique">
+                <methods>
+                    <include name="test_positive"/>
+                </methods>
+            </class>
+
+            <class name="team22.tests.sevim.us19.TC001">
+                <methods>
+                    <include name="test01"/>
+                </methods>
+            </class>
+            <class name="team22.tests.sevim.us19.TC002">
+                <methods>
+                    <include name="test2"/>
+                </methods>
+            </class>
+            <class name="team22.tests.sevim.us19.TC003">
+                <methods>
+                    <include name="test3"/>
+                </methods>
+            </class>
+            <class name="team22.tests.sevim.us19.TC004">
+                <methods>
+                    <include name="test4"/>
+                </methods>
+            </class>
+            <class name="team22.tests.sevim.us19.TC005">
+                <methods>
+                    <include name="test5"/>
+                </methods>
+            </class>
+            <class name="team22.tests.sevim.us19.TC006">
+                <methods>
+                    <include name="test6"/>
+                </methods>
+            </class>
+            <class name="team22.tests.sevim.us20.TC001">
+                <methods>
+                    <include name="test01"/>
+                </methods>
+            </class>
+            <class name="team22.tests.sevim.us20.TC002">
+                <methods>
+                    <include name="minimumSpendTest"/>
+                </methods>
+            </class>
+            <class name="team22.tests.sevim.us20.TC003">
+                <methods>
+                    <include name="emailAlaniTest"/>
+                </methods>
+            </class>
+            <class name="team22.tests.sevim.us22.TC001">
+                <methods>
+                    <include name="test5"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC01">
+                <methods>
+                    <include name="TC001"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC02">
+                <methods>
+                    <include name="TC002"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC03">
+                <methods>
+                    <include name="TC003"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC04">
+                <methods>
+                    <include name="TC004"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC05">
+                <methods>
+                    <include name="TC005"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC06">
+                <methods>
+                    <include name="TC006"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC07">
+                <methods>
+                    <include name="TC007"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC08">
+                <methods>
+                    <include name="TC008"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC01">
+                <methods>
+                    <include name="TC001"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC02">
+                <methods>
+                    <include name="TC002"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC03">
+                <methods>
+                    <include name="TC003"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC04">
+                <methods>
+                    <include name="TC004"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC05">
+                <methods>
+                    <include name="TC005"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC06">
+                <methods>
+                    <include name="TC006"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC07">
+                <methods>
+                    <include name="TC007"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC01">
+                <methods>
+                    <include name="TC001"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC02">
+                <methods>
+                    <include name="TC002"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC03">
+                <methods>
+                    <include name="TC003"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC04">
+                <methods>
+                    <include name="TC004"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC05">
+                <methods>
+                    <include name="TC005"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC06">
+                <methods>
+                    <include name="TC006"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC07">
+                <methods>
+                    <include name="TC007"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

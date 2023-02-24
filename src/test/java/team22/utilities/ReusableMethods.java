@@ -4,6 +4,9 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
 import org.testng.Assert;
+import team22.pages.sevim_hn.HomePage_svm;
+import team22.pages.sevim_hn.MyAccountPage;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -287,7 +290,33 @@ public class ReusableMethods {
 //        Actions actions = new Actions(driver);
         new Actions(Driver.getDriver()).dragAndDropBy(source,x,y).perform();
     }
+    public static void logout(){
 
+        HomePage_svm homePage_svm=new HomePage_svm();
+        ReusableMethods.clickByJS(homePage_svm.MyAccountButton);
+        ReusableMethods.waitFor(2);
+        ReusableMethods.clickByJS(homePage_svm.logout);
+        ReusableMethods.waitFor(2);
+        //Driver.getDriver().close();
+    }
+
+    public static void login() {
+
+        HomePage_svm homePage_svm=new HomePage_svm();
+        Driver.getDriver().get(ConfigReader.getProperty("app-url"));
+        ReusableMethods.waitFor(2);
+        ReusableMethods.clickByJS(homePage_svm.signinButonu);
+        ReusableMethods.waitFor(2);
+        homePage_svm.username.sendKeys(ConfigReader.getProperty("vendor-email"));
+        ReusableMethods.waitFor(2);
+        homePage_svm.passwordArea.sendKeys(ConfigReader.getProperty("vendor-pass"));
+        ReusableMethods.waitFor(2);
+        ReusableMethods.clickByJS(homePage_svm.signInConfirm);
+        ReusableMethods.waitFor(2);
+
+
+
+    }
     }
 
 
