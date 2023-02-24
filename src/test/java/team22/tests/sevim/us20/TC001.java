@@ -13,7 +13,7 @@ import team22.utilities.ReusableMethods;
 public class TC001 {
 
 
-    @Test
+    @Test(retryAnalyzer = team22.utilities.ListenersRetry.class)
     public void test01() {
             HomePage_svm homePage_svm = new HomePage_svm();
             CheckoutPage checkoutPage = new CheckoutPage();
@@ -22,7 +22,7 @@ public class TC001 {
             MyStorePage myStorePage = new MyStorePage();
             AddCouponsPage addCouponsPage = new AddCouponsPage();
             Faker faker = new Faker();
-            homePage.login(ConfigReader.getProperty("vendor-email"), ConfigReader.getProperty("vendor-pass"));
+            homePage_svm.login();
             ReusableMethods.waitForClickablility(homePage_svm.MyAccountButton, 3);
             ReusableMethods.waitFor(4);
             ReusableMethods.clickByJS(homePage_svm.MyAccountButton);

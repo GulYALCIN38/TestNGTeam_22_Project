@@ -15,27 +15,16 @@ import team22.utilities.ReusableMethods;
 
 public class TC001 {
 
-    Faker faker=new Faker();
-    String firstname=faker.name().firstName();
-    String lastname=faker.name().lastName();
-    String adresse=faker.address().streetAddress();
-    String city=faker.address().city();
-    String zip=faker.address().zipCode();
-    String phone=faker.phoneNumber().cellPhone();
-    String email = ConfigReader.getProperty("vendor-email");
-    String state = faker.country().capital();
 
 
-    @Test
-    public void addToCartTest01(){
+
+    @Test(retryAnalyzer = team22.utilities.ListenersRetry.class)
+    public void test01(){
         HomePage_svm homePage_svm = new HomePage_svm();
-        CheckoutPage checkoutPage = new CheckoutPage();
-        MyAccountPage myAccountPage=new MyAccountPage();
-        HomePage homePage=new HomePage();
-        HomepageGul homepageGul=new HomepageGul();
+
 
         ReusableMethods.waitFor(3);
-        homePage.login(ConfigReader.getProperty("vendor-email"),ConfigReader.getProperty("vendor-pass"));
+        ReusableMethods.login();
         ReusableMethods.waitFor(3);
         homePage_svm.searchButton.sendKeys("apple", Keys.ENTER);
         ReusableMethods.clickByJS( homePage_svm.macBook);
@@ -54,7 +43,8 @@ public class TC001 {
         Assert.assertTrue(homePage_svm.succesMessageForAddCart.isDisplayed());
 
         homePage_svm.cartToggle.click();
-        homePage_svm.logout();
+        ReusableMethods.logout();
+        //Driver.getDriver().close();
 
 
     }

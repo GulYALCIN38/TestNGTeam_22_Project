@@ -1,10 +1,14 @@
 package team22.pages.sevim_hn;
 
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import team22.utilities.ConfigReader;
 import team22.utilities.Driver;
 import team22.utilities.ReusableMethods;
+
+import java.security.Key;
 
 
 public class HomePage_svm {
@@ -60,12 +64,43 @@ public class HomePage_svm {
     @FindBy(xpath = "(//img[@class='attachment-woocommerce_thumbnail size-woocommerce_thumbnail'])[1]")
     public WebElement macBook;
 
+    @FindBy(xpath = "//*[@id='username']")
+    public WebElement username;
 
+    @FindBy(xpath = "//*[@id='password']")
+    public WebElement passwordArea;
+
+    @FindBy(xpath = "//*[text()='Sign In ']")
+    public WebElement signinButonu;
+
+    @FindBy(xpath = "//*[@value='Sign In']")
+    public WebElement signInConfirm;
+
+    @FindBy(xpath = "//a[text()='Logout']")
+    public WebElement logout;
 
     public void logout(){
-        ReusableMethods.clickByJS(signOutButton);
-        ReusableMethods.clickByJS(LogOut);
-        Driver.getDriver().close();
+        ReusableMethods.clickByJS(MyAccountButton);
+        ReusableMethods.waitFor(2);
+        ReusableMethods.clickByJS(logout);
+        ReusableMethods.waitFor(2);
+        //Driver.getDriver().close();
+    }
+
+    public void login() {
+        Driver.getDriver().get(ConfigReader.getProperty("app-url"));
+        ReusableMethods.waitFor(2);
+        signinButonu.click();
+        ReusableMethods.waitFor(2);
+        username.sendKeys(ConfigReader.getProperty("vendor-email"));
+        ReusableMethods.waitFor(2);
+        passwordArea.sendKeys(ConfigReader.getProperty("vendor-pass"));
+        ReusableMethods.waitFor(2);
+        ReusableMethods.clickByJS(signInConfirm);
+        ReusableMethods.waitFor(2);
+
+
+
     }
 
 

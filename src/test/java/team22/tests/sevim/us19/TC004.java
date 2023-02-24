@@ -10,30 +10,32 @@ import team22.pages.gul_hn.HomepageGul;
 import team22.pages.sevim_hn.CheckoutPage;
 import team22.pages.sevim_hn.HomePage_svm;
 import team22.utilities.ConfigReader;
+import team22.utilities.Driver;
 import team22.utilities.ReusableMethods;
 
 public class TC004 {
 
-    Faker faker=new Faker();
-    String firstname=faker.name().firstName();
-    String lastname=faker.name().lastName();
-    String adresse=faker.address().streetAddress();
-    String city=faker.address().city();
-    String zip=faker.address().zipCode();
-    String phone=faker.phoneNumber().cellPhone();
-    String email = ConfigReader.getProperty("vendor-email");
-    String state = faker.country().capital();
 
 
-    @Test
-    public void test4(){
+
+    @Test(retryAnalyzer = team22.utilities.ListenersRetry.class)
+    public void test04(){
+        Faker faker=new Faker();
+        String firstname=faker.name().firstName();
+        String lastname=faker.name().lastName();
+        String adresse=faker.address().streetAddress();
+        String city=faker.address().city();
+        String zip=faker.address().zipCode();
+        String phone=faker.phoneNumber().cellPhone();
+        String email = ConfigReader.getProperty("vendor-email");
+        String state = faker.country().capital();
         HomePage_svm homePage_svm = new HomePage_svm();
         CheckoutPage checkoutPage = new CheckoutPage();
         HomePage homePage=new HomePage();
         HomepageGul homepageGul=new HomepageGul();
 
         ReusableMethods.waitFor(3);
-        homePage.login(ConfigReader.getProperty("vendor-email"),ConfigReader.getProperty("vendor-pass"));
+        homePage_svm.login();
         ReusableMethods.waitFor(3);
 
         homePage_svm.searchButton.sendKeys("apple", Keys.ENTER);
@@ -81,8 +83,8 @@ public class TC004 {
         Assert.assertTrue(checkoutPage.amount.isDisplayed());
         ReusableMethods.clickByJS(checkoutPage.payAtDoor);
         ReusableMethods.clickByJS(checkoutPage.wisePay);
-
-        ReusableMethods.clickByJS(homepageGul.logout);
+        homePage_svm.logout();
+        //Driver.getDriver().close();
 
     }
 }
