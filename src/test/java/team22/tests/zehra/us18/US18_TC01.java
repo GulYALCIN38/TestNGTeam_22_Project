@@ -22,7 +22,7 @@ public class US18_TC01 {
         ReusableMethods.waitFor(5);
         HomePage.goToProduct();
        ReusableMethods.scrollDownActions();
-        allureStorePage.simpleProduct.click();
+        ReusableMethods.clickByJS(allureStorePage.simpleProduct);
         Select simpleDropdown = new Select(allureStorePage.simpleProduct);
         simpleDropdown.selectByVisibleText("External/Affiliate Product");
         ReusableMethods.scrollDownActions();

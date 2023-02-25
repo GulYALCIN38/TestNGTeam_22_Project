@@ -13,7 +13,7 @@ public class AllureMyAccount {
     @FindBy(xpath="//*[text()='Store Manager']")
     public WebElement storeManager;
 
-    @FindBy(xpath="//a[text()='Addresses']")
+    @FindBy(xpath = "//a[contains(text(),'Addresses')]")
     public WebElement adres;
 
     @FindBy(xpath="(//a[@class='edit btn btn-link btn-primary btn-underline mb-4'])[2]")

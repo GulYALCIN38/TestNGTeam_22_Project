@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http\Users\Gebruiker\Desktop\CANTA.png
+://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Gebruiker/IdeaProjects/TestNGTeam_22_Project/src/test/java/team22/tests/zehra">
+        <classes>
+            <class name="team22.tests.zehra.us04.US04_TC01">
+                <methods>
+                    <include name="TC001"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC02">
+                <methods>
+                    <include name="TC002"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC03">
+                <methods>
+                    <include name="TC003"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC04">
+                <methods>
+                    <include name="TC004"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC05">
+                <methods>
+                    <include name="TC005"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC06">
+                <methods>
+                    <include name="TC006"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC07">
+                <methods>
+                    <include name="TC007"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us04.US04_TC08">
+                <methods>
+                    <include name="TC008"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC01">
+                <methods>
+                    <include name="TC001"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC02">
+                <methods>
+                    <include name="TC002"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC03">
+                <methods>
+                    <include name="TC003"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC04">
+                <methods>
+                    <include name="TC004"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC05">
+                <methods>
+                    <include name="TC005"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC06">
+                <methods>
+                    <include name="TC006"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us16.US16_TC07">
+                <methods>
+                    <include name="TC007"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC01">
+                <methods>
+                    <include name="TC001"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC02">
+                <methods>
+                    <include name="TC002"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC03">
+                <methods>
+                    <include name="TC003"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC04">
+                <methods>
+                    <include name="TC004"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC05">
+                <methods>
+                    <include name="TC005"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC06">
+                <methods>
+                    <include name="TC006"/>
+                </methods>
+            </class>
+            <class name="team22.tests.zehra.us18.US18_TC07">
+                <methods>
+                    <include name="TC007"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

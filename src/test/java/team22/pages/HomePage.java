@@ -46,49 +46,48 @@ public class HomePage {
 
     public static void LoginVendor() {
         AllureHomePage allureHomePage = new AllureHomePage();
-        AllureMyAccount allureMyAccount = new AllureMyAccount();
-        AllureStorePage allureStorePage = new AllureStorePage();
 
         Driver.getDriver().get(ConfigReader.getProperty("app-url"));
-        allureHomePage.signIn.click();
-        ReusableMethods.waitFor(2);
+        ReusableMethods.waitFor(3);
+       ReusableMethods.clickByJS( allureHomePage.signIn);
+        ReusableMethods.waitFor(3);
         allureHomePage.mailKutusu.sendKeys(ConfigReader.getProperty("vendor-email"));
         ReusableMethods.waitFor(2);
         allureHomePage.passwordKutusu.sendKeys(ConfigReader.getProperty("vendor-pass"));
         ReusableMethods.waitFor(2);
-        allureHomePage.signInButton.click();
+        ReusableMethods.clickByJS(allureHomePage.signInButton);
 
     }
     public static void goToProduct(){
         AllureHomePage allureHomePage = new AllureHomePage();
         AllureMyAccount allureMyAccount = new AllureMyAccount();
         AllureStorePage allureStorePage = new AllureStorePage();
-
+        ReusableMethods.waitFor(2);
        ReusableMethods.clickByJS(allureHomePage.myAccount);
-       ReusableMethods.waitFor(3);
+       ReusableMethods.waitFor(2);
        ReusableMethods.clickByJS(allureMyAccount.storeManager);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
 //        Actions actions=new Actions(Driver.getDriver());
 //        ReusableMethods.scrollDownActions();
       ReusableMethods.clickByJS(allureStorePage.product);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
         ReusableMethods.clickByJS(allureStorePage.addNew);
-        ReusableMethods.waitFor(3);
+        ReusableMethods.waitFor(2);
 
     }
     public static void loginKullanici() {
         AllureHomePage allureHomePage = new AllureHomePage();
         AllureMyAccount allureMyAccount = new AllureMyAccount();
         AllureStorePage allureStorePage = new AllureStorePage();
-        ReusableMethods.waitFor(1);
+        ReusableMethods.waitFor(2);
 
         Driver.getDriver().get(ConfigReader.getProperty("app-url"));
         ReusableMethods.clickByJS(allureHomePage.signIn);
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(3);
         allureHomePage.mailKutusu.sendKeys(ConfigReader.getProperty("kul-email"));
         ReusableMethods.waitFor(2);
         allureHomePage.passwordKutusu.sendKeys(ConfigReader.getProperty("kul-pass"));
-        ReusableMethods.waitFor(5);
+        ReusableMethods.waitFor(3);
         ReusableMethods.clickByJS(allureHomePage.signInButton);
 
     }

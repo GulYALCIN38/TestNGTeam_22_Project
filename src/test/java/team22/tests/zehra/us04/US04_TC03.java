@@ -29,12 +29,12 @@ public class US04_TC03{
         //login islemleri ve add adrese kadar olan bolum
         HomePage.loginKullanici();
         ReusableMethods.waitFor(3);
-        allureHomePage.myAccount.click();
-        allureMyAccount.adres.click();
+        ReusableMethods.clickByJS(allureHomePage.myAccount);
+        ReusableMethods.clickByJS(allureMyAccount.adres);
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(3);
-        allureMyAccount.shippingAdd.click();
+        ReusableMethods.clickByJS(allureMyAccount.shippingAdd);
         ReusableMethods.waitFor(2);
         //bilgilerin doldurulmasi
         Faker faker = new Faker();
@@ -48,7 +48,7 @@ public class US04_TC03{
         allureMyAccount.townCity.sendKeys("isparta");
         Select province = new Select(allureMyAccount.province);
         province.selectByVisibleText("Isparta");
-        allureMyAccount.saveAdres.click();
+        ReusableMethods.clickByJS(allureMyAccount.saveAdres);
         ReusableMethods.getScreenshot("us04 tc03");
         ReusableMethods.waitFor(2);
         Assert.assertEquals(allureMyAccount.errorMessage.getText(),"Last name is a required field.");

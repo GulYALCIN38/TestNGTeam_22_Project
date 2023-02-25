@@ -33,7 +33,7 @@ public class US04_TC02{
         Actions actions = new Actions(Driver.getDriver());
         actions.sendKeys(Keys.PAGE_DOWN).perform();
         ReusableMethods.waitFor(3);
-        allureMyAccount.shippingAdd.click();
+        ReusableMethods.clickByJS(allureMyAccount.shippingAdd);
         ReusableMethods.waitFor(2);
         //bilgilerin doldurulmasi
         Faker faker = new Faker();
@@ -47,7 +47,7 @@ public class US04_TC02{
         allureMyAccount.townCity.sendKeys("isparta");
         Select province = new Select(allureMyAccount.province);
         province.selectByVisibleText("Isparta");
-        allureMyAccount.saveAdres.click();
+        ReusableMethods.clickByJS(allureMyAccount.saveAdres);
         ReusableMethods.getScreenshot("US04 TC02");
         ReusableMethods.waitFor(2);
         String expected="First name is a required field.";

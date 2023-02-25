@@ -34,7 +34,8 @@ public class US04_TC01{
 
         Faker faker=new Faker();
         String username=faker.name().fullName();
-        Driver.getDriver().get(ConfigReader.getProperty("fake-mail"));
+       // ReusableMethods.waitFor(2);
+        Driver.getDriver().get(ConfigReader.getProperty("fakemail"));
         ReusableMethods.waitFor(3);
         String mail=allureMyAccount.fakeMail.getText();
         Driver.getDriver().get(ConfigReader.getProperty("app-url"));
@@ -42,7 +43,7 @@ public class US04_TC01{
         homePage.registerUsername.sendKeys(username, Keys.TAB,mail,Keys.TAB,"ZRbam2007!",Keys.ENTER,Keys.SPACE,Keys.ENTER);
         ReusableMethods.waitFor(2);
         ReusableMethods.clickByJS( allureHomePage.myAccount);
-       allureMyAccount.adres.click();
+       ReusableMethods.clickByJS(allureMyAccount.adres);
       ReusableMethods.clickByJS(allureMyAccount.shippingAdd);
        ReusableMethods.waitFor(2);
 

@@ -16,17 +16,19 @@ import team22.utilities.ReusableMethods;
 import java.io.IOException;
 
 public class US18_TC06 {
-   AllureStorePage allureStorePage = new AllureStorePage();
-    AllureAddProduct allureAddProduct = new AllureAddProduct();
-AllureMyAccount allureMyAccount=new AllureMyAccount();
+
     @Test
     public void TC006() throws IOException {
+    AllureStorePage allureStorePage = new AllureStorePage();
+    AllureAddProduct allureAddProduct = new AllureAddProduct();
+    AllureMyAccount allureMyAccount=new AllureMyAccount();
+
         HomePage.LoginVendor();
         ReusableMethods.waitFor(5);
         HomePage.goToProduct();
         ReusableMethods.scrollDownActions();
         ReusableMethods.waitFor(2);
-        allureStorePage.simpleProduct.click();
+        ReusableMethods.clickByJS(allureStorePage.simpleProduct);
         Select simpleDropdown = new Select(allureStorePage.simpleProduct);
         simpleDropdown.selectByVisibleText("External/Affiliate Product");
        allureAddProduct.productTitle.sendKeys("gold kolye");
@@ -36,7 +38,7 @@ AllureMyAccount allureMyAccount=new AllureMyAccount();
        allureAddProduct.salePrice.sendKeys("19");
        allureAddProduct.buyukFoto.click();
         ReusableMethods.waitFor(2);
-        allureAddProduct.selectFiles.click();
+       ReusableMethods.clickByJS(allureAddProduct.selectFiles);
         Zehra.uploadFilePath("\\Users\\Gebruiker\\Desktop\\kolye1.png");
         ReusableMethods.waitFor(2);
         allureAddProduct.selectButton.click();
