@@ -27,7 +27,7 @@ public class US18_TC07 {
         HomePage.goToProduct();
         ReusableMethods.scrollDownActions();
         ReusableMethods.waitFor(2);
-        allureStorePage.simpleProduct.click();
+        ReusableMethods.clickByJS(allureStorePage.simpleProduct);
         Select simpleDropdown = new Select(allureStorePage.simpleProduct);
         simpleDropdown.selectByVisibleText("External/Affiliate Product");
         allureAddProduct.productTitle.sendKeys("gold kolye");

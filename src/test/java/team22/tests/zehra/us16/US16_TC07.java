@@ -15,7 +15,8 @@ public class US16_TC07 {
 
 
     @Test
-    public void TC007() throws IOException {
+    public void
+    TC007() throws IOException {
         AllureStorePage allureStorePage = new AllureStorePage();
         AllureAddProduct allureAddProduct = new AllureAddProduct();
         AllureMyAccount allureMyAccount=new AllureMyAccount();
