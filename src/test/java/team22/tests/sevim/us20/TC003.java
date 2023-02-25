@@ -84,6 +84,7 @@ public class TC003 {   //BU TEST FAILED !!
         ReusableMethods.clickByJS(myStorePage.CouponsButton);
         SoftAssert softAssert = new SoftAssert();
         softAssert.assertFalse(couponsPage.lastCreatedCoupon.getText().contains(newCouponName));
+        softAssert.assertAll();
         homePage_svm.logout();
 
 
