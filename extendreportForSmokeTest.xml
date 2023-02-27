@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Smoke Test Suite">
-
+<suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="C:/Users/sevim/IdeaProjects/OkulProjesi/TestNGTeam_22_Project">
         <classes>
             <class name="team22.tests.gul.US2">
@@ -59,7 +58,6 @@
                     <include name="test_positive"/>
                 </methods>
             </class>
-
             <class name="team22.tests.sevim.us19.TC001">
                 <methods>
                     <include name="test01"/>
@@ -67,7 +65,7 @@
             </class>
             <class name="team22.tests.sevim.us19.TC002">
                 <methods>
-                    <include name="test2"/>
+                    <include name="test02"/>
                 </methods>
             </class>
             <class name="team22.tests.sevim.us19.TC003">
@@ -77,17 +75,17 @@
             </class>
             <class name="team22.tests.sevim.us19.TC004">
                 <methods>
-                    <include name="test4"/>
+                    <include name="test04"/>
                 </methods>
             </class>
             <class name="team22.tests.sevim.us19.TC005">
                 <methods>
-                    <include name="test5"/>
+                    <include name="test05"/>
                 </methods>
             </class>
             <class name="team22.tests.sevim.us19.TC006">
                 <methods>
-                    <include name="test6"/>
+                    <include name="test06"/>
                 </methods>
             </class>
             <class name="team22.tests.sevim.us20.TC001">
@@ -107,7 +105,7 @@
             </class>
             <class name="team22.tests.sevim.us22.TC001">
                 <methods>
-                    <include name="test5"/>
+                    <include name="couponlaAlisveris"/>
                 </methods>
             </class>
         </classes>
